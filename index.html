@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="eng">
+
+	<head>
+
+		<!-- META DATA -->
+		<meta charset="utf-8">
+
+		<!-- PAGE TITLE -->
+		<title>Foodie Journal</title>
+
+		<!-- PAGE LINKS -->
+		<link rel="stylesheet" href="css/global.css">
+
+		<!-- FONT AWESOME -->
+		<script src="https://kit.fontawesome.com/3a47080193.js" crossorigin="anonymous"></script>
+
+		<!-- STYLE RULES -->
+		<style>
+			
+		/* Dynamic Side Nav With Hamburger ============================================= */
+		.page-wrapper {
+			background-color: white;
+			max-width: 100rem;
+			min-height: 100vh;
+			margin: 0 auto;
+			padding: 5rem;
+			position: relative;
+		}
+
+		/* Navigation › Large Screen ============================================= */
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+		}
+
+		main {
+			margin-top: 5rem; /* 50 pixals*/
+		}
+
+		p {
+			/*margin: revert;*/
+			margin: 1.6rem 0;
+		}
+
+
+		h1 + p { /* adjacticent selector */
+			margin-top: 5rem;
+		}
+
+		.logo{
+			/*background-color: coral;*/
+			width: 10rem;
+			height: 7rem;
+			font-size: 2.5rem;
+			font-weight: 300;
+		}
+
+		.mainnav label,
+		.mainnav input {
+			display: none;
+		}
+
+		.menu {
+			display: fixed;
+		}
+
+		.menu > li { /* "">"" this selects the immidiate children of li*/ 
+			margin-left: 5rem;
+		}
+
+		.menu a {
+			color: black;
+			display: block;
+			padding: 1rem 0;
+		}
+
+
+		.submenu {
+			position: absolute; /* taken out of document flow b/c if we dont when we open the submenu, the rest of the elements will move up and down with the submenu */
+			display: inline-block;
+			/*width: 14rem;*/
+			max-height: 0;
+			overflow: hidden;
+			transition: 0.35s linear;
+			/*padding: 0 0;*/
+		}
+
+		li:hover .submenu {
+			background-color: coral;
+			/*min-width: 40%;  this made the submenu become wider but did not help center it */
+			max-height: 100%;
+			max-width: 100%;
+		}
+
+		.submenu a {
+			color: transparent;
+			transition: 0.35s linear;
+			align-self: center;
+			margin: 0 1rem;
+		}
+
+		li:hover .submenu a {
+			color: black;
+		}
+
+		/*
+		=Navigation › Small Screen
+		============================================= */
+		
+			.mainnav label {
+				display: block;
+				font-size: 2rem;
+				position: relative;
+				z-index: 99;
+			}
+
+			.menu {
+				position: absolute;
+				top: 0; left: 0; right: 0;
+				/*width: 60vh;  vw= view port width ||this make it 60% of the screen when you click on the burger*/
+				height: 100vh;
+				margin-top: -100vh; /* this hides the menu */
+				flex-direction: column;  /* this makes the menu be displayed in column instead */ 
+				transition: 0.35s linear;
+				z-index: 9;
+			}
+
+			.menu a {
+				font-size: 3rem;
+				color: transparent;
+				text-align: center;
+			}
+
+			.mainnav input:checked + .menu {
+				margin-top: 0;
+				background-color: aliceblue;
+			}
+
+			.mainnav input:checked + .menu a{
+				color: black
+			}
+
+			.menu > li:first-child {
+				margin-top: 2rem; /* 20 px */
+			}
+		
+		/* ========================================== */
+
+		</style>
+	</head>
+	<body>
+
+		<!-- PAGE WRAPPER -->
+		<div class="page-wrapper">
+
+			<header>
+
+				<!-- MAIN NAVIGATION -->
+				<div class="logo"> 
+					<a href="index.html">
+						<b>Foodie Journal</b>
+					</a>
+				</div>
+				<nav class="mainnav">
+					
+					<!-- HAMBURGER ICON -->
+					<label for="hamburger"><i class="fas fa-bars"></i></label>
+					<input type="checkbox" id="hamburger">
+
+					<!-- MENU -->
+					<ul class="menu">
+						<!-- Food Directory -->
+						<li style="display: relative;">
+							<a href="index.html">Food Directory</a>
+						</li>
+
+						<!-- About-->
+						<li>
+							<a href="about.html">About</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			<main>
+				<!-- IN CHICAGO -->
+				<h2>Chicago, IL</h2>
+
+				<!-- SD RESTAURANTS -->
+				<div class="gallery">
+
+					<!-- CAFECITO -->
+					<figure>
+						<img src="assets/images/cafecito/cafecito-thumbnail.jpg" />
+						<figcaption>
+							<a href="chicago/cafecito.html">Cafecito</a>#cafe
+						</figcaption>
+					</figure>
+
+
+					<!-- DISTRICT BREW YARD -->
+				<!-- 	<figure>
+						<img src="assets/images/" />
+						<figcaption>
+							<a href="">District Brew Yard</a>#brewery
+						</figcaption>
+					</figure> -->
+
+
+					<!-- LOU MALNATI'S PIZZERIA -->
+					<figure>
+						<img src="assets/images/lou-malnati/loumalnati-thumbnail.jpeg" />
+						<figcaption>
+							<a href="chicago/lou-malnati.html">Lou Malnati's Pizzeria</a>#restaurant
+						</figcaption>
+					</figure>
+
+
+					<!-- MINGHIN CUISINE -->
+					<figure>
+						<img src="assets/images/ming-hin/minghin-thumbnail.jpeg" />
+						<figcaption>
+							<a href="chicago/minghin.html">MingHin Cuisine</a>#restaurant
+						</figcaption>
+					</figure>
+				</div>
+
+				<br>
+				<br>
+
+				<!-- IN SAN DIEGO -->
+				<h2>San Diego, CA</h2>
+
+				<!-- SD RESTAURANTS -->
+				<div class="gallery">
+
+					<!-- BISTRO KAZ -->
+					<figure>
+						<img src="assets/images/bistro-kaz/thumbnail-bistrokaz.png" />
+						<figcaption>
+							<a href="san-diego/bistro-kaz.html">Bistro Kaz</a>#restaurant
+						</figcaption>
+					</figure>
+
+					<!-- BOARD AND BREW -->
+					<figure>
+						<img src="assets/images/board-and-brew/thumbnail-boardandbrew.png" />
+						<figcaption>
+							<a href="san-diego/board-and-brew.html">Board & Brew</a>#restaurant
+						</figcaption>
+					</figure>
+
+					<!-- CAVA -->
+					<figure>
+						<img class="san-diego" src="assets/images/cava/thumbnail-cava.png" />
+						<figcaption>
+							<a href="san-diego/cava.html">CAVA</a>#restaurant
+						</figcaption>
+					</figure>
+
+					<!-- DIN TAI FUNG-->
+					<figure>
+						<img class="san-diego" src="assets/images/din-tai-fung/dintaifung-thumbnail.jpeg" />
+						<figcaption>
+							<a href="san-diego/din-tai-fung.html">Din Tai Fing</a>#restaurant
+						</figcaption>
+					</figure>
+
+					<!-- GREAT MAPLE -->
+					<figure>
+						<img class="san-diego" src="assets/images/great-maple/greatmaple-thumbnail.jpeg" />
+						<figcaption>
+							<a href="san-diego/greatmaple.html">Great Maple</a>#restaurant
+						</figcaption>
+					</figure>
+
+					<!-- OSCARS MEXICAN SEAFOOD -->
+					<figure>
+						<img class="san-diego" src="assets/images/oscars-mexican-seafood/oscars-front.png" />
+						<figcaption>
+							<a href="san-diego/oscars.html">Oscars Mexican Seafood</a>#restaurant
+						</figcaption>
+					</figure>
+
+
+					<!-- SAGE FRENCH CAKES -->
+					<figure>
+						<img class="san-diego" src="assets/images/sage-french-cake/sage-thumbnail.png" />
+						<figcaption>
+							<a href="san-diego/sage-french-cake.html">Sage French Cakes</a>#dessert
+						</figcaption>
+					</figure>
+
+					<!-- SALT & STRAW -->
+					<figure>
+						<img class="san-diego" src="assets/images/salt-and-straw/thumbnail-saltandstraw.png" />
+						<figcaption>
+							<a href="san-diego/saltandstraw.html">Salt & Straw</a>#dessert
+						</figcaption>
+					</figure>
+
+					<!-- TAPIOCA EXPRESS -->
+					<figure>
+						<img class="san-diego" src="assets/images/tapioca-express/tapiocaexpress-thumbnail.jpeg" />
+						<figcaption>
+							<a href="san-diego/tapioca-express.html">Tapioca Express</a>#teashop
+						</figcaption>
+					</figure>
+
+					<!-- True Food Kitchen  -->
+					<figure>
+						<img class="san-diego" src="assets/images/true-food-kitchen/truefoodkitchen-thumbnail.jpeg" />
+						<figcaption>
+							<a href="san-diego/true-food-kitchen.html">True Food Kitchen</a>#restaurant
+						</figcaption>
+					</figure>
+				</div>
+				
+			</main>
+		</div> <!-- END Page Wrapper -->
+	</body>
+</html>
